@@ -57,9 +57,9 @@ public class Player extends Character implements GameObjects {
     }
 
     public void heartPicInit() {
-        Picture heart1 = new Picture(360, 15, ResourcesHandler.PREFIX + "heart.png");
-        Picture heart2 = new Picture(410, 15, ResourcesHandler.PREFIX + "heart.png");
-        Picture heart3 = new Picture(460, 15, ResourcesHandler.PREFIX + "heart.png");
+        Picture heart1 = new Picture(350, 20, ResourcesHandler.PREFIX + "heart.png");
+        Picture heart2 = new Picture(400, 20, ResourcesHandler.PREFIX + "heart.png");
+        Picture heart3 = new Picture(450, 20, ResourcesHandler.PREFIX + "heart.png");
 
         this.heartPicture1 = heart1;
         this.heartPicture2 = heart2;

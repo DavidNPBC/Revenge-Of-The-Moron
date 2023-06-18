@@ -25,6 +25,10 @@ public class EnemyChris extends Enemy {
 
     private boolean isDead;
 
+    public void removePic() {
+         enemyChrisPicture.delete();
+    };
+
     @Override
     public int health() {
         return health;

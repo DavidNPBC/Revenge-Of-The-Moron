@@ -30,6 +30,9 @@ public class EnemyPedro extends Enemy {
         return health;
     }
 
+    public void removePic() {
+        enemyPedroPicture.delete();
+    };
 
     public boolean getIsDead() {
         return isDead;

@@ -2,6 +2,7 @@ package org.ac.proxymorons.revengeofthemoron.GameObjects.Characters.Enemy;
 
 import org.ac.proxymorons.revengeofthemoron.GameObjects.Characters.Character;
 import org.ac.proxymorons.revengeofthemoron.GameObjects.GameObjects;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 abstract public class Enemy extends Character implements GameObjects {
 
@@ -16,7 +17,7 @@ abstract public class Enemy extends Character implements GameObjects {
         return isDead;
     }
 
-    public void init() {};
+    public void removePic() {};
 
 
 

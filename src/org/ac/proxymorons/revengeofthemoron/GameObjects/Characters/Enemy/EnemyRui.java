@@ -31,6 +31,10 @@ public class EnemyRui extends Enemy {
     }
 
 
+    public void removePic() {
+        enemyRuiPicture.delete();
+    };
+
     public boolean getIsDead() {
         return isDead;
 

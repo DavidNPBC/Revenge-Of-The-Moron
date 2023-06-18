@@ -1,5 +1,6 @@
 package org.ac.proxymorons.revengeofthemoron.GameLogic;
 
+import org.ac.proxymorons.revengeofthemoron.Music;
 import org.ac.proxymorons.revengeofthemoron.ResourcesHandler;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
@@ -21,6 +22,8 @@ public class Background {
     public  Picture startPictureInit() {
         Picture startBackground = new Picture(0, 0, ResourcesHandler.PREFIX + "start-screen.png");
         startBackground.draw();
+        Music.intromusic.play(false);
+
         startPicture = startBackground;
         return  startPicture;
     }
@@ -38,9 +41,9 @@ public class Background {
 
     public static Text scoreTextInit() {
             scoreString = "Score: " + Levels.SCORE;
-            Text scoreText = new Text(400, 580, scoreString);
+            Text scoreText = new Text(400, 565, scoreString);
             SCORETEXT = scoreText;
-            scoreText.grow(30,30);
+            scoreText.grow(23,23);
             scoreText.draw();
             return scoreText;
         }

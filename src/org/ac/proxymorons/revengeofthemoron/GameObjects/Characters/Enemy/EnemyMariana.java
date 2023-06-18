@@ -31,6 +31,10 @@ public class EnemyMariana extends Enemy {
     }
 
 
+    public void removePic() {
+        enemyMarianaPicture.delete();
+    };
+
     public boolean getIsDead() {
         return isDead;
 

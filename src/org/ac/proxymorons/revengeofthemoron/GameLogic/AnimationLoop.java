@@ -5,12 +5,13 @@ import org.ac.proxymorons.revengeofthemoron.GameObjects.Characters.Enemy.*;
 import org.ac.proxymorons.revengeofthemoron.GameObjects.Characters.Player.Bullet;
 import org.ac.proxymorons.revengeofthemoron.GameObjects.Characters.Player.Player;
 import org.ac.proxymorons.revengeofthemoron.GameObjects.GameObjects;
+import org.ac.proxymorons.revengeofthemoron.Music;
+import org.ac.proxymorons.revengeofthemoron.ResourcesHandler;
 
 public class AnimationLoop {
     private Player player;
 
     private Levels level;
-
 
     public void setPlayer(Player player) {
         this.player = player;
@@ -24,23 +25,28 @@ public class AnimationLoop {
         while (true) {
 
 
-                try {
+            try {
 
-                    Thread.sleep(30);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                Thread.sleep(30);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if (!Game.gameStarts) {
+
             } else {
                 Background.deleteStartPicture();
 
-                updateGame(background);
+                Music.intromusic.stop();
+                Music.play1.setLoop(true);
+                Music.play1.play(false);
 
+                updateGame(background);
                 collisionChecker();
             }
         }
 
     }
+
 
     private void updateGame(Background background) { //updates the player (bullet movement) and enemy movement
         if (!Player.isDead) {
@@ -80,8 +86,6 @@ public class AnimationLoop {
                 handleCollision(player, MarianaBullet.marianaBullets.get(i));
             }
         }
-
-
 
 
         // check collision between bullets and enemies
@@ -154,7 +158,6 @@ public class AnimationLoop {
         }
 
 
-
     }
 
     private boolean checkCollision(GameObjects object1, GameObjects object2) {
@@ -208,6 +211,7 @@ public class AnimationLoop {
         mikeBullet.deleteCurrentMikeBullet(mikeBullet);
         player.gotHit();
     }
+
     private void handleCollision(Player player, MarianaBullet marianaBullet) {
         marianaBullet.deleteCurrentMarianaBullet(marianaBullet);
         player.gotHit();

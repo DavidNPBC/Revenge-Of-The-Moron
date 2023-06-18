@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class Levels {
 
-    public LinkedList<Enemy> enemies;
+    public static LinkedList<Enemy> enemies;
 
     public Enemy enemy;
 
@@ -38,6 +38,7 @@ public class Levels {
                 enemies.add(enemy);
                 Music chrisSpawn = new Music(ResourcesHandler.PREFIX + "chris-spawn.wav");
                 chrisSpawn.play(false);
+
                 break;
             case 1:
                 enemy = new EnemyPedro(background);
@@ -70,13 +71,16 @@ public class Levels {
 
         currentLevel(background);
 
+        Music.play1.play(false);
 
         for (Enemy enemy : enemies) {
             enemy.update();
 
             if (enemy.getIsDead() == true) {
+
                 if (EnemyChris.getChrisBullet().size() == 0 && EnemyPedro.getPedroBullet().size() == 0 && EnemyRui.getRuiBullet().size() == 0
                         && EnemyMike.getMikeBullet().size() == 0 && EnemyMariana.getMarianaBullet().size() == 0) {
+                    Music.play1.stop();
                     SCORE++;
                     Background.SCORETEXT.delete();
                     Background.scoreTextInit();
@@ -88,7 +92,7 @@ public class Levels {
         }
     }
 
-    public LinkedList<Enemy> getEnemies() {
+    public static LinkedList<Enemy> getEnemies() {
         return enemies;
     }
 

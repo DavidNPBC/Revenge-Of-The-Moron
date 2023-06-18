@@ -18,6 +18,7 @@ public class Game {
 
     public Picture gameOverScreen;
 
+
     public void startGame() {
         Background background = new Background();
         background.init();
@@ -30,7 +31,6 @@ public class Game {
         player1.showCharacter(background);
         this.player = player1;
 
-
         MyKeyboardHandler myKeyboardHandler = new MyKeyboardHandler(player1, this);
         myKeyboardHandler.init();
 
@@ -42,8 +42,10 @@ public class Game {
     }
 
 
+
     public void gameOver() {
         gameOver = true;
+        Music.play1.stop();
         Picture gameOverScreen = new Picture(0, 0, ResourcesHandler.PREFIX + "gameover-screen.png");
         this.gameOverScreen = gameOverScreen;
         gameOverScreen.draw();
@@ -55,6 +57,7 @@ public class Game {
         gameOver = false;
         player.isDead = false;
 
+
         player.setHealth(3);
         gameOverScreen.delete();
         player.playerPicture.draw();
@@ -65,6 +68,12 @@ public class Game {
             Player.getBullets().remove(i);
         }
 
+
+        for(int i = 0; i < Levels.enemies.size(); i++) {
+            Levels.enemies.get(i).removePic();
+            Levels.enemies.remove(i);
+        }
+        Levels.enemies = null;
 
         Levels.SCORE = 0;
         Levels.LEVEL = 0;

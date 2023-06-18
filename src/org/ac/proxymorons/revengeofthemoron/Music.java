@@ -23,43 +23,57 @@ import java.io.InputStream;
 import java.net.URL;
 
 public class Music {
-        private Clip clip;
-        private URL soundURL;
+    public static Music intromusic = new Music(ResourcesHandler.PREFIX + "intro-music.wav");
+    public static Music play1 = new Music(ResourcesHandler.PREFIX + "play1.wav");
+    //public static Music play2 = new Music(ResourcesHandler.PREFIX + "play2.wav");
 
-        public Music(String path) {
-            initClip(path);
-        }
-        public void play(boolean fromStart) {
-            if (fromStart) {
-                clip.setFramePosition(0);
-            }
-            clip.start();
-        }
 
-        public void stop() {
-            clip.stop();
+    private Clip clip;
+    private URL soundURL;
+    private boolean loop;
+
+    public Music(String path) {
+        initClip(path);
+    }
+
+    public void play(boolean fromStart) {
+        if (fromStart) {
+            clip.setFramePosition(0);
         }
-        private void initClip(String path) {
-            soundURL = Music.class.getResource(path);
-            AudioInputStream inputStream = null;
-            try {
-                if (soundURL == null) {
-                    path = path.substring(0);
-                    File file = new File(path);
-                    soundURL = file.toURI().toURL();
-                }
-                inputStream = AudioSystem.getAudioInputStream(soundURL);
-                clip = AudioSystem.getClip();
-                clip.open(inputStream);
-            } catch (UnsupportedAudioFileException | LineUnavailableException | IOException ex) {
-                System.out.println(ex.getMessage());
+        clip.loop(loop ? Clip.LOOP_CONTINUOUSLY : 0);
+    }
+
+    public void stop() {
+        clip.stop();
+    }
+
+    public void setLoop(boolean loop) {
+        this.loop = loop;
+    }
+
+    private void initClip(String path) {
+        soundURL = Music.class.getResource(path);
+        AudioInputStream inputStream = null;
+        try {
+            if (soundURL == null) {
+                path = path.substring(0);
+                File file = new File(path);
+                soundURL = file.toURI().toURL();
             }
+            inputStream = AudioSystem.getAudioInputStream(soundURL);
+            clip = AudioSystem.getClip();
+            clip.open(inputStream);
+        } catch (UnsupportedAudioFileException | LineUnavailableException | IOException ex) {
+            System.out.println(ex.getMessage());
         }
     }
 
-    // Version for Jar
+}
+
+// Version for Jar
 
     /*private Clip clip;
+    private boolean loop;
 
     public Music(String path) {
         initClip("/" + path);
@@ -69,11 +83,17 @@ public class Music {
         if (fromStart) {
             clip.setFramePosition(0);
         }
+        clip.loop(loop ? Clip.LOOP_CONTINUOUSLY : 0);
         clip.start();
     }
 
     public void stop() {
         clip.stop();
+        clip.setFramePosition(0);
+    }
+
+    public void setLoop(boolean loop) {
+        this.loop = loop;
     }
 
     private void initClip(String path) {
@@ -92,5 +112,4 @@ public class Music {
     }
 }
 */
-
 
