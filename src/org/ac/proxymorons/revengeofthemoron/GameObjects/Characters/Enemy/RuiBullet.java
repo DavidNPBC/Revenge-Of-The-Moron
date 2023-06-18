@@ -26,7 +26,7 @@ public class RuiBullet implements GameObjects {
         if(randomNumRui==0) {
             ruiBulletPicture = new Picture(ruiEnemyX, ruiEnemyY, ResourcesHandler.PREFIX + "beer.png");
         } else {
-            ruiBulletPicture = new Picture(ruiEnemyX, ruiEnemyY, ResourcesHandler.PREFIX + "priest.png");
+            ruiBulletPicture = new Picture(ruiEnemyX, ruiEnemyY, ResourcesHandler.PREFIX + "javabible.png");
         }
         currentRuiBulletPictureX = ruiBulletPicture.getX();
     }

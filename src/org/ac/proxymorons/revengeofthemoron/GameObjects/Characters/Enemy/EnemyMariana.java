@@ -38,7 +38,7 @@ public class EnemyMariana extends Enemy {
 
 
     public EnemyMariana(Background background) {
-        Picture picture = new Picture(735, 290, ResourcesHandler.PREFIX + "mariana.png");
+        Picture picture = new Picture(725, 290, ResourcesHandler.PREFIX + "mariana.png");
         this.enemyMarianaPicture = picture;
         picture.draw();
         setBackground(background);

@@ -44,7 +44,7 @@ public class Game {
 
     public void gameOver() {
         gameOver = true;
-        Picture gameOverScreen = new Picture(210, 100, ResourcesHandler.PREFIX + "gameover-screen.png");
+        Picture gameOverScreen = new Picture(0, 0, ResourcesHandler.PREFIX + "gameover-screen.png");
         this.gameOverScreen = gameOverScreen;
         gameOverScreen.draw();
         gameStarts = false;

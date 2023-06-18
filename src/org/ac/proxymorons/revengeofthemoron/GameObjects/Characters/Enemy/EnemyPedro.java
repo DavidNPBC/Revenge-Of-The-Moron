@@ -39,7 +39,7 @@ public class EnemyPedro extends Enemy {
 
     public EnemyPedro(Background background) {
         int randomY = (int) (Math.random() * background.getBackgroundHeight() - 10);
-        Picture picture = new Picture(735, randomY, ResourcesHandler.PREFIX +"pedro.jpeg");
+        Picture picture = new Picture(720, randomY, ResourcesHandler.PREFIX +"pedro.png");
         this.enemyPedroPicture = picture;
         picture.draw();
         setBackground(background);

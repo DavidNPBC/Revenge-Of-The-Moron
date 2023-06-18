@@ -17,11 +17,13 @@ package org.ac.proxymorons.revengeofthemoron;
 
 import javax.sound.sampled.*;
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 public class Music {
-        /* private Clip clip;
+        private Clip clip;
         private URL soundURL;
 
         public Music(String path) {
@@ -53,11 +55,11 @@ public class Music {
                 System.out.println(ex.getMessage());
             }
         }
-    }*/
+    }
 
     // Version for Jar
 
-    private Clip clip;
+    /*private Clip clip;
 
     public Music(String path) {
         initClip("/" + path);
@@ -89,6 +91,6 @@ public class Music {
         }
     }
 }
-
+*/
 
 

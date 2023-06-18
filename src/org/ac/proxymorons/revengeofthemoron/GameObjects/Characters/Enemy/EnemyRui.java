@@ -39,7 +39,7 @@ public class EnemyRui extends Enemy {
 
     public EnemyRui(Background background) {
         int randomY = (int) (Math.random() * background.getBackgroundHeight() - 10);
-        Picture picture = new Picture(735, randomY, ResourcesHandler.PREFIX +"rui.jpeg");
+        Picture picture = new Picture(725, randomY, ResourcesHandler.PREFIX +"rui.png");
         this.enemyRuiPicture = picture;
         picture.draw();
         setBackground(background);

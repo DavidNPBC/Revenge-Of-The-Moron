@@ -25,9 +25,9 @@ public class MikeBullet implements GameObjects {
         this.background = background;
         int randomNumMike = (int) (Math.random() * 2);
         if (randomNumMike == 0) {
-            mikeBulletPicture = new Picture(mikeEnemyX, mikeEnemyY, ResourcesHandler.PREFIX + "mike.png");
+            mikeBulletPicture = new Picture(mikeEnemyX, mikeEnemyY, ResourcesHandler.PREFIX + "weed.png");
         } else {
-            mikeBulletPicture = new Picture(mikeEnemyX, mikeEnemyY, ResourcesHandler.PREFIX + "rapper.png");
+            mikeBulletPicture = new Picture(mikeEnemyX, mikeEnemyY, ResourcesHandler.PREFIX + "microfone.png");
 
         }
 

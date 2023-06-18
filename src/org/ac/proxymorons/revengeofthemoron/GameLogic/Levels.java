@@ -31,7 +31,7 @@ public class Levels {
 
     public void generateEnemy(Background background) {
         int randomEnemy = (int) (Math.random() * 5);
-        //int randomEnemy = 1;
+        //int randomEnemy = 4;
         switch (randomEnemy) {
             case 0:
                 enemy = new EnemyChris(background);

@@ -38,7 +38,7 @@ public class EnemyChris extends Enemy {
 
 
     public EnemyChris(Background background) {
-        Picture picture = new Picture(735, 290, ResourcesHandler.PREFIX +"chris.jpeg");
+        Picture picture = new Picture(725, 290, ResourcesHandler.PREFIX +"chris.png");
         this.enemyChrisPicture = picture;
         picture.draw();
         setBackground(background);
