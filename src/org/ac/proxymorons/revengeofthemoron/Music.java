@@ -1,16 +1,5 @@
 package org.ac.proxymorons.revengeofthemoron;
 
-    /*public static void playSoundEffect(String filePath) {
-        try {
-            File soundFile = new File(filePath);
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
-        } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {
-            e.printStackTrace();
-        }
-    }*/
 
 //Version for IntelliJ
 //To do the Jar, comment this out. Also change resource handler to blank.
@@ -28,7 +17,7 @@ public class Music {
     //public static Music play2 = new Music(ResourcesHandler.PREFIX + "play2.wav");
 
 
-    private Clip clip;
+    /*private Clip clip;
     private URL soundURL;
     private boolean loop;
 
@@ -68,11 +57,11 @@ public class Music {
         }
     }
 
-}
+}*/
 
 // Version for Jar
 
-    /*private Clip clip;
+    private Clip clip;
     private boolean loop;
 
     public Music(String path) {
@@ -111,5 +100,5 @@ public class Music {
         }
     }
 }
-*/
+
 
